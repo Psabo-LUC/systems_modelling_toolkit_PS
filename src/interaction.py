@@ -3,7 +3,7 @@ import pandas as pd
 
 class Interaction:
     def __init__(
-        self, name: str, resultant: str, stimulus: str, rate: str, effect: [1, -1], Kd: str = None, n: str = None
+        self, name: str, resultant: str, stimulus: str, rate: str, effect: [1, -1], Kd: None, n: None
     ):
         self.name = name
         self.resultant = resultant # substrate affected

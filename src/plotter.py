@@ -1,7 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-def doit(df):
+def doit(df, save_path="./figure.png"):
   # The first column is the time steps, but it's missing a header name in the CSV.
   # We will rename it to 'Time' and set it as the index.
   df.rename(columns={df.columns[0]: 'Time'}, inplace=True)
@@ -9,7 +9,7 @@ def doit(df):
 
   # 2. Select which substrates you actually want to see. 
   # (Plotting all 16 at once gets messy, so specify the key ones here)
-  substrates_to_plot = ["pAKT", "pPTEN", "pPI3K", "pGSK3B"]
+  substrates_to_plot = ["A", "B", "C", "Stim"]
 
   # 3. Create the plot
   plt.figure(figsize=(8, 5))
@@ -25,7 +25,7 @@ def doit(df):
 
   # Save and show
   plt.tight_layout()
-  plt.savefig("figure.png", dpi=300)
+  plt.savefig(save_path, dpi=300)
   print("Saved plot to figure.png")
 
 

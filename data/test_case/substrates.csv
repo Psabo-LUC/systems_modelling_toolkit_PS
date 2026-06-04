@@ -1,5 +1,5 @@
 ,name,initial_value,substrate_type,activation_rate,deactivation_rate,total_amt,other_state,active_time_ranges
-0,Stim,0,stimulus,,,0,,"0,60"
+0,Stim,0,stimulus,,,0,,"120,180"
 1,A,0,enzyme,A_act,A_deact,1
 2,B,0,enzyme,B_act,B_deact,1
 3,C,0,enzyme,C_act,C_deact,1

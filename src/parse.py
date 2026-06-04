@@ -12,7 +12,7 @@ def fill_nas(df):
 
 # same comments for the other functions below
 def parse_rates(rates_csv_path):
-    rates_df = pd.read_csv(rates_csv_path, index_col=0) # read csv
+    rates_df = pd.read_csv(rates_csv_path, index_col=0).replace({np.nan: None}) # read csv
     fill_nas(rates_df) # fill na values for blanks
     rates_dictionary = {v: None for v in rates_df.name.values} # convert to dictionary
     # iterate rates and and create a dictionary of rate objects
@@ -23,7 +23,7 @@ def parse_rates(rates_csv_path):
     return rates_dictionary
 
 def parse_substrates(substrates_csv_path):
-    substrates_df = pd.read_csv(substrates_csv_path, index_col=0)
+    substrates_df = pd.read_csv(substrates_csv_path, index_col=0).replace({np.nan: None}) 
     fill_nas(substrates_df)
     substrates_dictionary = {v: None for v in substrates_df.name.values}
     for _, substrate in substrates_df.iterrows():
@@ -33,7 +33,7 @@ def parse_substrates(substrates_csv_path):
     return substrates_dictionary
 
 def parse_interactions(interactions_csv_path):
-    interactions_df = pd.read_csv(interactions_csv_path, index_col=0)
+    interactions_df = pd.read_csv(interactions_csv_path, index_col=0).replace({np.nan: None}) 
     fill_nas(interactions_df)
     interactions_dictionary = {v: None for v in interactions_df.name.values}
     for _, interaction in interactions_df.iterrows():
