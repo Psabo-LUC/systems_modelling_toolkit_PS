@@ -20,7 +20,8 @@ Notes:
 
 Modeling example:
 
-<img width="661" height="164" alt="Untitled Diagram drawio(1)" src="https://github.com/user-attachments/assets/cf4835f0-5e6f-4f28-abef-2b09fbc21a8e" />
+<img width="722" height="168" alt="Untitled Diagram drawio(2)" src="https://github.com/user-attachments/assets/02f0f8be-b9e5-4fca-b209-7fcd4dea2035" />
+
 
 
 
@@ -28,7 +29,11 @@ Modeling example:
 
 Input files:
 
+
 substrate.csv
+
+
+
 
 interactions.csv 
 
