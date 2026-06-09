@@ -90,7 +90,7 @@ This csv is where you will define the boundaries of all the individual reaction 
 - "lower_bound" is the lower boundary of possible values that the coefficient can be when being fitted to data.
 - "upper_bound" is the upper boundary of possible values that the coefficient can be when being fitted to data.
 - "bound_type" tells the fitting code if that coefficient is a real number or an integer
-- "fixed" is either True (the coefficient is fixed to entry in the "value" column of the same row) or False
+- "fixed" is either True (the coefficient is fixed to the entry in the "value" column of the same row) or False
 
 
 
