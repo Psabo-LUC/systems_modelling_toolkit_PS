@@ -40,7 +40,7 @@ The base functionality of this code model has three input files that the user ca
 For each of these, I will explain what inputs are needed to model the above system and roughly what each input means. The names of these files can be changed, just ensure that your script is pointing to the correct file location when you run the model 
 
  -substrate.csv-
- <img width="1017" height="184" alt="image" src="https://github.com/user-attachments/assets/7997262b-ff90-4f58-9194-c4c361093e32" />
+   <img width="1017" height="184" alt="image" src="https://github.com/user-attachments/assets/7997262b-ff90-4f58-9194-c4c361093e32" />
 
 Within this csv, you will define each of your species terms amongst a few others. 
 - The first column of the csv must contain the index of the substrates.
@@ -80,7 +80,7 @@ Within this csv, you will define how each species interacts with each other amon
 
 
  -rates.csv-
- <img width="585" height="361" alt="image" src="https://github.com/user-attachments/assets/51b1653e-7d6d-4596-b2da-96ae8fe4d7ab" />
+  <img width="585" height="361" alt="image" src="https://github.com/user-attachments/assets/51b1653e-7d6d-4596-b2da-96ae8fe4d7ab" />
 
 This csv is where you will define the boundaries of all the individual reaction coefficients listed in the other files. However, it also contains fitting constraints for the fitting portion of this code (tutorial coming soon)
 - The first column of the csv must contain the index of each rate coefficient
