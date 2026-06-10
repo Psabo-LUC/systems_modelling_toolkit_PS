@@ -4,7 +4,7 @@ To run an interactive example in collab:
 * Select [interactive.ipynb](https://github.com/huskeypm/systems_modelling_toolkit/blob/main/interactive.ipynb)
 * Click its [Open in Colab](https://colab.research.google.com/github/huskeypm/systems_modelling_toolkit/blob/main/interactive.ipynb) button
   
-.ipynb notes:
+**.ipynb notes:**
 - This script is built to read from and write to .csv/.json files. When troubleshooting or tweaking parameters for this model, the easiest way of doing so is to open the .csv files and edit them manually. However, if you try to do this editing inside of google sheets, it will NOT work due to google changing the file type upon being opened in google sheets. If you do end up opening the file in google sheets and making an edit, you will need to download said file as a .csv, and re-upload it to the drive for the colab script to recognize it.
 - The easiest way to use the .ipynb scripts is to run them in a Jupyter Notebook. If you are logged into any of the workstations on campus, opening a terminal and typing "jupyter notebook" should open a session inside your web browser. Since the jupyter notebook pulls from the files local to your machine, you can edit the .csv files however you like, as long as the data structure and file type remain the same. 
 
@@ -21,11 +21,11 @@ Notes:
 
 
 
-Python notes:
+# **Python notes:**
 
 - The setup.sh and requirements.txt files should have everything that is needed to construct your coding environment. 
 
-Model Example Tutorial:
+# **Model Example Tutorial:**
 
 <img width="722" height="168" alt="Untitled Diagram drawio(2)" src="https://github.com/user-attachments/assets/02f0f8be-b9e5-4fca-b209-7fcd4dea2035" />
 
@@ -39,7 +39,7 @@ The base functionality of this code model has three input files that the user ca
 
 For each of these, I will explain what inputs are needed to model the above system and roughly what each input means. The names of these files can be changed, just ensure that your script is pointing to the correct file location when you run the model 
 
- -substrate.csv-
+## substrate.csv
    <img width="1017" height="184" alt="image" src="https://github.com/user-attachments/assets/7997262b-ff90-4f58-9194-c4c361093e32" />
 
 Within this csv, you will define each of your species terms amongst a few others. 
@@ -56,7 +56,6 @@ Within this csv, you will define each of your species terms amongst a few others
 - "activation_rate" is essentially the rate of generation of a species within an equilibrium reaction.
 - "deactivation_rate" is essentially the rate of degradation of a species within an equilibrium reaction.
 
-  
 - Note: The above two terms can be thought about in two ways
 
    * A. if the (activation_rate)/(deactivation_rate) is greater than 1, the forward reaction will be favored. If (activation_rate)/(deactivation_rate) is less than 1, the reverse reaction will be favored.  
@@ -66,7 +65,7 @@ Within this csv, you will define each of your species terms amongst a few others
 - "other_state" is where you would input an alternative form of a species. For example, a phosphorylated version of the base species.
 - "active_time_ranges" defines the time ranges for which each species is active. If a species is set to be of substrate_type stimulus, then you MUST define an active time range for that species. If that entry is left empty, the script will assume that species is active across the entire simulation time. 
 
- -interactions.csv-
+ ## interactions.csv 
  <img width="446" height="165" alt="image" src="https://github.com/user-attachments/assets/60626ada-f6ff-4fa4-a9f2-11056665594f" />
 
 Within this csv, you will define how each species interacts with each other among a few other things. 
@@ -79,7 +78,7 @@ Within this csv, you will define how each species interacts with each other amon
 - "Kd and n" are the coefficients of the Hill function. If these entries are NOT blank, Hill mechanics will be applied to that reaction
 
 
- -rates.csv-
+ ## rates.csv
   <img width="585" height="361" alt="image" src="https://github.com/user-attachments/assets/51b1653e-7d6d-4596-b2da-96ae8fe4d7ab" />
 
 This csv is where you will define the boundaries of all the individual reaction coefficients listed in the other files. However, it also contains fitting constraints for the fitting portion of this code (tutorial coming soon)
@@ -95,8 +94,8 @@ This csv is where you will define the boundaries of all the individual reaction 
 
 
 
+## run.py
 
-More to come...
 
 
 
