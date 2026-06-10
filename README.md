@@ -94,7 +94,41 @@ This csv is where you will define the boundaries of all the individual reaction 
 
 
 
+
 ## run.py
+Within the SRC subdirectory of this repo, you will find all of the scipts used to parse the input files we filled out above. At its most basic, this repo is designed to generate and solve a series of ODE's based on the input files. Additionally, once the ODE's have been constructed it is possible to fit specific speicies to expirmental data but more on that later
+
+
+Inside "run.py", you will find the following script, 
+<img width="1164" height="809" alt="Screenshot from 2026-06-10 11-25-51" src="https://github.com/user-attachments/assets/3e8397f7-8ae0-4465-a6e9-8744e0242029" />
+
+To input the csv's that we just filled out, plug the respective csv filepaths into their parse function. (rates.csv's goes into parse_rates(), interactions.csv into parse_interactions(), etc,.) 
+These parse functions essentially unpack all of the csv inputs, and store them in dictionaries to be used in the "Network" function. 
+
+The Network function takes all of our input dictionaries and compiles them into sets of ODE's that model the kinetics of each species. This function has the following inputs, 
+Network(./csv file to save the output to, parsed rates, parsed interactions, parsed substrates)
+
+In order to plot the output of the Network function, we have to define the time range we would like to simulate. We do this by using the built in python function linspace(t_start, t_end t_resolution).
+The "for" loop immediately following the the linspace function will print each species ODE function to the terminal, a specific time can be plugged into n.represent_rate(**time**, s) and it will display the active kinetics at that time point. (I am unsure if this is works)
+
+The output in the terminal for our specified system is as follows:
+<img width="702" height="72" alt="image" src="https://github.com/user-attachments/assets/89e98f9c-dd62-4085-853d-2ff2dd3a075f" />
+
+Note:
+When a species is labelled as a "stimulus" its output equation will be displayed as zero, however, that species is still kinetically active in the system. (Rohan, is this how it works? I think I understand why you do this for an applied stimulus, but how does it work if that stimulus is both a reaction product and a feedback inhibitor, AKA, [C] in the above system?)
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
