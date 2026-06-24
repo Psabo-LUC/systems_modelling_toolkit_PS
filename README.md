@@ -5,8 +5,26 @@ To run an interactive example in collab:
 * Click its [Open in Colab](https://colab.research.google.com/github/huskeypm/systems_modelling_toolkit/blob/main/interactive.ipynb) button
   
 **.ipynb notes:**
-- This script is built to read from and write to .csv/.json files. When troubleshooting or tweaking parameters for this model, the easiest way of doing so is to open the .csv files and edit them manually. However, if you try to do this editing inside of google sheets, it will NOT work due to google changing the file type upon being opened in google sheets. If you do end up opening the file in google sheets and making an edit, you will need to download said file as a .csv, and re-upload it to the drive for the colab script to recognize it.
-- The easiest way to use the .ipynb scripts is to run them in a Jupyter Notebook. If you are logged into any of the workstations on campus, opening a terminal and typing "jupyter notebook" should open a session inside your web browser. Since the jupyter notebook pulls from the files local to your machine, you can edit the .csv files however you like, as long as the data structure and file type remain the same. 
+- This script is built to read from and write to .csv/.json files. When troubleshooting or tweaking parameters for this model, the easiest way of doing so is to open the .csv files and edit them manually. However, doing this in a manner that is functional with both Colab and gsheets can be tricky. To achieve this, complete the following steps. Start by signing into the Gdrive you intend on using, navigate to "MyDrive", and create a folder in this directory.
+- Navigate to and open your local sheets edittor (Excel, LibreOffice Calc, etc.,). Generate and save three .csv files, for convenience, name them "substrates", "rates", and "interactions".
+- Upload these csv files to the "MyDrive" file you created previously
+- Open one of these .csv files in google sheets and navigate to the "Extentions" Tab and select "Sheets to Colab", followed by selecting "Copy export code to clipboard". Note, this extention may need to be installed from the "Add-ons" menu in the within that same tab.
+- The code that is generated and saved to the clipboard is roughly whats displayed below:
+<img width="737" height="604" alt="image" src="https://github.com/user-attachments/assets/50aa718b-d406-4ebd-af56-32ea8902ab99" />
+
+
+- The highlighed key on line 10 is the specific gsheets key assocaited with our substrates file, which can be found in the gsheets URL seen below.
+- The line that follows is the filename of the gsheet associated with the specified key. 
+
+
+<img width="1083" height="234" alt="image" src="https://github.com/user-attachments/assets/0d5a8317-2a5a-4872-9f32-69c42cb07270" />
+
+- For convenince, I duplicate line 10 and 11 twice more and put the keys and filename associated with rates.csv and interactions.csv into the function arguement and commented them out. You can swap between sheets by commenting/uncommmenting the ID & filename seen above(ensure only one "ID" & "filenname" is uncommented at any given time.)
+
+In the following cell, if we run the code seen at the top of the image below, it will populate a interactive google sheet that can be used to edit the csv sheet we specified in the previous step. To change cell values, simply select the cell, type the new value, and press "Enter" 
+<img width="1671" height="707" alt="image" src="https://github.com/user-attachments/assets/74631cca-09cf-4b16-aff6-4ad39119e3c5" />
+
+
 
 In progress:
 * `myrun.py` gives an example run
